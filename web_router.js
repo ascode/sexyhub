@@ -17,6 +17,7 @@ var topic = require('./controllers/topic');
 var reply = require('./controllers/reply');
 var rss = require('./controllers/rss');
 var staticController = require('./controllers/static');
+var sexyhubController = require('./controllers/sexyhub');
 var auth = require('./middlewares/auth');
 var limit = require('./middlewares/limit');
 var github = require('./controllers/github');
@@ -105,6 +106,9 @@ router.get('/faq', staticController.faq);
 router.get('/getstart', staticController.getstart);
 router.get('/robots.txt', staticController.robots);
 router.get('/api', staticController.api);
+
+// sexyhub
+router.get('/sexyhub', sexyhubController.index);
 
 //rss
 router.get('/rss', rss.index);

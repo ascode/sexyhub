@@ -67,6 +67,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', require('ejs-mate'));
 app.locals._layoutFile = 'layout.html';
+/**
+ * 看到了<%-body -%>部分了吧，是一个主体的部分引用，app.js里面我们设置了
+app.locals._layoutFile = 'layout.html';
+告诉我们ejs-mate我们是有layout文件的，每次都要加载这个，不需要我们手动去<%include("user/user")%>这样每次都写，它会按我们要求自动的加载的。
+ */
 app.enable('trust proxy');
 
 // Request logger。请求时间
